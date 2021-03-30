@@ -1,0 +1,233 @@
+/*CSS for Homework #2 Portfolio Page*/
+
+* {
+    /*allows all elements to include padding and border into its total width and height.*/
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+
+}
+
+:root {
+    --primary-color: #365d6efa;
+    --primary-font-family: 'garamond', 'arial', 'lucida';
+    --primary-font-color: #fff;
+}
+
+body {
+        
+    /*image credit https://unsplash.com/photos/PO8Woh4YBD8?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink*/
+    background-image:url(bia-andrade-PO8Woh4YBD8-unsplash.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+
+}
+
+.header-section {
+    /*places a space between this color and h1 that's inside it.*/
+    padding: 7px 0px;
+    background-color: var(--primary-color);
+    color: var(--primary-font-color);
+    font-family: var(--primary-font-family);
+    
+    
+    
+    
+    
+}
+
+#h1_myname {
+    
+    display:inline-block;
+    /*background-color:purple;*/
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left: 40px;
+    padding-right:7px;
+    
+
+}
+
+nav {
+    /*used border to see element's positioning*/
+    /*border:solid 2px yellow;*/
+    float: right;
+    margin-right: 40px;
+    font-size:25px;
+    
+   
+}
+
+/*removes bullets from ul*/
+nav ul {
+    list-style-type: none;
+    /*used border to see element's positioning*/
+    /*border:solid 2px red;*/
+
+}
+
+/*aligns li items horizontally*/
+nav ul li {
+    display:inline-block;
+    /*used border to see element's positioning*/
+    /*border:solid 2px pink;*/
+    padding: 15px;
+    text-decoration:underline;
+    
+}
+
+/*places a white backdrop infront of the background image.  then my main items are placed on top of that white backdrop*/
+.wrapper {
+    /*used position fixed. then about me, work, contact me can be positioned relative to this*/
+    position:fixed;
+    background:white;
+    top:25%;
+    left:0;
+    bottom:0;
+    right:0;
+    /*since position is fixed, overflow-x:scroll allowed scroll bars to be able to scroll when browser is minimized*/
+    overflow-x:scroll;
+
+
+}
+
+/*container for aboutme title and aboutme blah.  it is positioned relative so that it can be moved down a bit, away from abstract picture, showing a white space*/
+.aboutme {
+    position: relative;
+    margin-top: 15px;
+    /*used border to see element's positioning*/
+    /*border: solid 2px yellow;*/
+    
+
+}
+
+.aboutme_aside {
+    font-size:40px;
+    /*width of the aboutme aside*/
+    width:200px;
+    border-right: solid 3px red;
+    /*used display table-cell so that it will display as a table cell. then when combined with aboutme_blah class, they lineup horizontally*/
+    display: table-cell;
+    text-align:right;
+    /*adding padding-right moved the "about me" away from the right border a bit*/
+    padding-right:10px;
+    font-family: var(--primary-font-family);
+      
+
+}
+
+
+.aboutme_blah {
+    /*padding size goes clockwise from top.*/
+    padding: 10px 15px 10px 15px;
+    /*used display:table-cell here along with aboutme_aside class so that they both lineup vertically*/
+    display:table-cell;
+    /*used border to see element's positioning*/
+    /*border:solid 2px green;*/
+    /*aligns text about me to the top*/
+    vertical-align:top;
+    font-family: var(--primary-font-family);
+    
+}
+
+.work {
+    position:relative;
+    /*used border to see element's positioning*/
+    /*border:solid 2px brown;*/
+    /*margin-top moves work section down, away from about me section*/
+    margin-top:15px;
+
+}
+
+.work_aside {
+    display:table-cell;
+    font-size:40px;
+    border-right:solid 3px green;
+    width:200px;
+    text-align:right;
+    padding-right:10px;
+    font-family: var(--primary-font-family);
+
+}
+
+
+
+/*styling for work imgages*/
+
+.img_section {
+    float:right;
+    width:265px;
+    padding:5px;
+
+}
+
+img {
+    max-width:100%;
+    max-height:100%;
+    border:solid 3px blue;
+
+}
+
+
+/* Clearfix (clear floats) */
+/* not really sure how this works but after using float right on .img_section, i believe this clears
+the float and displays the images as table*/
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+
+.contactme {
+    /*used border to see element's positioning*/
+    /*border: solid 2px orange;*/
+    position:relative;
+    /*moves contact me div away from work div*/
+    margin-top: 15px;
+    display:flex;
+
+
+}
+
+.contactme_aside {
+    font-size:40px;
+    /*width of the aboutme aside*/
+    width:200px;
+    border-right: solid 3px red;
+    /*used display table-cell so that it will display as a table cell. then when combined with aboutme_blah class, they lineup horizontally*/
+    display: table-cell;
+    text-align:right;
+    /*adding padding-right moved the "about me" away from the right border a bit*/
+    padding-right:10px;
+    font-family: var(--primary-font-family);
+}
+
+.contactme_article {
+    /*lines up a href.  containing div contactme must be display:flex*/
+    display:inline-flex;
+    margin-top: 5px;
+    margin-left: 5px;
+    
+    
+}
+
+
+article.contactme_article a {
+    font-size:30px;
+    padding:12px;
+    text-align:center;
+    font-family: var(--primary-font-family);
+    
+
+}
+
+@media screen and (max-width: 768px) {
+    main, nav {
+        flex-direction:column;
+        
+    }
+
+    aside {
+        order: 2;
+    }
